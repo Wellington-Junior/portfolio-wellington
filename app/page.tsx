@@ -216,7 +216,7 @@ export default function Home() {
       </section>
 
       <footer className="site-footer">
-        <a className="brand" href="#inicio">WJ<span>.</span></a>
+        <a className="brand" href="#inicio">WJ<span>.</span>dev</a>
         <p>© 2026 Wellington Junior. Desenvolvido com atenção aos detalhes.</p>
         <a href="#inicio">Voltar ao topo ↑</a>
       </footer>
