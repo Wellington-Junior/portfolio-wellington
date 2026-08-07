@@ -186,9 +186,11 @@ export default function Home() {
           <p className="kicker light">Sobre mim</p>
           <h2>Desenvolvimento com visão de <em>negócio.</em></h2>
           <p>
-            Sou desenvolvedor front-end e tenho formação em andamento em Engenharia de Software.
-            Meu trabalho combina código, experiência do usuário e comunicação para criar sites
-            que não sejam apenas bonitos — sejam úteis para quem contrata e para quem acessa.
+            Sou Wellington Junior, desenvolvedor Front-End focado na criação de sites, landing pages e aplicações web modernas, responsivas e funcionais.
+            <br/><br/>
+            Trabalho com tecnologias como React, Next.js, TypeScript e JavaScript, buscando unir boa experiência do usuário, desempenho e soluções que realmente atendam às necessidades de cada projeto.
+            <br/><br/>
+            Tenho experiência prática no desenvolvimento de projetos reais, desde a criação da interface até publicação e configuração em produção.
           </p>
           <div className="social-links">
             <a href="https://github.com/Wellington-Junior" target="_blank" rel="noreferrer">GitHub <Arrow /></a>
