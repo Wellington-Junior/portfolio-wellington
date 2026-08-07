@@ -193,7 +193,7 @@ export default function Home() {
           <div className="social-links">
             <a href="https://github.com/Wellington-Junior" target="_blank" rel="noreferrer">GitHub <Arrow /></a>
             <a href="https://www.linkedin.com/in/wellington-junior-85ba93221/" target="_blank" rel="noreferrer">LinkedIn <Arrow /></a>
-            <a href="https://www.instagram.com/housetech.wj/" target="_blank" rel="noreferrer">Instagram <Arrow /></a>
+            <a href="https://www.instagram.com/wj.dev/" target="_blank" rel="noreferrer">Instagram <Arrow /></a>
           </div>
         </div>
         <div className="tech-panel">
