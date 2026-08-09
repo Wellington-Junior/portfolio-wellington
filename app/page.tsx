@@ -49,7 +49,7 @@ export default function Home() {
     sameAs: [
       "https://github.com/Wellington-Junior",
       "https://www.linkedin.com/in/wellington-junior-85ba93221/",
-      "https://www.instagram.com/housetech.wj/",
+      "https://www.instagram.com/wj.dev/",
     ],
     knowsAbout: ["React", "Next.js", "TypeScript", "Web Design", "Front-end Development"],
   };
