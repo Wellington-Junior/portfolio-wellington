@@ -45,12 +45,23 @@ const technologies = [
 const caseStudies = [
   {
     number: "CASE 01",
+    visual: "gallery",
     name: "Mania de Doce e Cia",
     lead: "Uma presença digital doce na aparência e direta na experiência.",
     challenge: "Organizar um catálogo variado sem perder a identidade artesanal da marca.",
     solution: "Arquitetura clara, visual responsivo e caminhos rápidos para conhecer os produtos e pedir informações.",
     technologies: ["React", "JavaScript", "CSS", "Responsivo"],
     href: "https://maniadedoceecia.com.br/",
+  },
+  {
+    number: "CASE 02",
+    visual: "arte",
+    name: "Espaço Arte pra Viver",
+    lead: "Uma plataforma para aproximar marcas autorais de feiras e encontros criativos.",
+    challenge: "Apresentar o espaço e tornar mais claro o caminho para marcas interessadas em participar.",
+    solution: "Desenvolvimento do front-end e do back-end, com integração ao Supabase, apresentação das etapas e acesso ao cadastro de expositores.",
+    technologies: ["Front-end", "Back-end", "Supabase"],
+    href: "https://arte-pra-viver-expositores.vercel.app/",
   },
 ];
 
@@ -124,7 +135,7 @@ export default function Home() {
       </section>
 
       <section className="proof-strip" aria-label="Destaques profissionais">
-        <div><strong>01</strong><span>Projeto real<br />publicado</span></div>
+        <div><strong>02</strong><span>Projetos reais<br />online</span></div>
         <div><strong>100%</strong><span>Responsivo<br />e sob medida</span></div>
         <div><strong>RJ</strong><span>Atendimento local<br />e remoto</span></div>
       </section>
@@ -132,14 +143,19 @@ export default function Home() {
       <section className="project-section section-shell" id="projeto">
         <div className="section-heading">
           <div>
-            <p className="kicker">Projeto selecionado</p>
+            <p className="kicker">Projetos selecionados</p>
             <h2>Trabalho real.<br /><em>Resultado visível.</em></h2>
           </div>
-          <p>Um site pensado do conteúdo à publicação para apresentar produtos, ocasiões e facilitar o contato com clientes.</p>
+          <p>Projetos criados para apresentar negócios, conectar pessoas e facilitar o contato.</p>
         </div>
 
         {caseStudies.map((study) => <article className="case-study" key={study.name}>
-          <ProjectGallery />
+          {study.visual === "gallery" ? <ProjectGallery /> : (
+            <div className="case-visual case-visual-arte">
+              <img src="/arte-pra-viver.png" alt="Imagem de apresentação do Espaço Arte pra Viver, com a frase Ideias que ganham vida quando se encontram" loading="lazy" />
+              <span className="case-label">Front-end · Back-end · Supabase</span>
+            </div>
+          )}
           <div className="case-copy">
             <p className="case-number">{study.number}</p>
             <h3>{study.name}</h3>
