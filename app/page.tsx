@@ -1,3 +1,4 @@
+import { caseStudies } from "./caseStudies";
 import { ArrowIcon } from "./ArrowIcon";
 import { ProjectGallery } from "./ProjectGallery";
 import { BuildShowcase } from "./BuildShowcase";
@@ -18,9 +19,9 @@ const services = [
   },
   {
     number: "03",
-    title: "Interfaces front-end",
-    text: "Para projetos que precisam transformar uma ideia ou um layout em uma interface para a web.",
-    includes: "Pode incluir desenvolvimento com React, adaptação para celular e atenção à navegação e à acessibilidade.",
+    title: "Aplicações web",
+    text: "Para negócios que precisam de uma aplicação web, como um sistema de cadastro ou uma área para organizar informações.",
+    includes: "Pode incluir interface responsiva, desenvolvimento do back-end e integração com banco de dados, conforme o projeto.",
   },
 ];
 
@@ -39,31 +40,11 @@ const technologies = [
   "HTML5",
   "CSS3",
   "Tailwind CSS",
+  "Supabase",
   "Git & GitHub",
 ];
 
-const caseStudies = [
-  {
-    number: "CASE 01",
-    visual: "gallery",
-    name: "Mania de Doce e Cia",
-    lead: "Uma presença digital doce na aparência e direta na experiência.",
-    challenge: "Organizar um catálogo variado sem perder a identidade artesanal da marca.",
-    solution: "Arquitetura clara, visual responsivo e caminhos rápidos para conhecer os produtos e pedir informações.",
-    technologies: ["React", "JavaScript", "CSS", "Responsivo"],
-    href: "https://maniadedoceecia.com.br/",
-  },
-  {
-    number: "CASE 02",
-    visual: "arte",
-    name: "Espaço Arte pra Viver",
-    lead: "Uma plataforma para aproximar marcas autorais de feiras e encontros criativos.",
-    challenge: "Apresentar o espaço e tornar mais claro o caminho para marcas interessadas em participar.",
-    solution: "Desenvolvimento do front-end e do back-end, com integração ao Supabase, apresentação das etapas e acesso ao cadastro de expositores.",
-    technologies: ["Front-end", "Back-end", "Supabase"],
-    href: "https://arte-pra-viver-expositores.vercel.app/",
-  },
-];
+
 
 
 export default function Home() {
@@ -72,7 +53,7 @@ export default function Home() {
     "@type": "Person",
     name: "Wellington Junior",
     url: "https://www.wellingtonjunior.dev/",
-    jobTitle: "Desenvolvedor Front-end",
+    jobTitle: "Desenvolvedor de sites e aplicações web",
     sameAs: [
       "https://github.com/Wellington-Junior",
       "https://www.linkedin.com/in/wellington-junior-85ba93221/",
@@ -105,9 +86,8 @@ export default function Home() {
             <span className="hero-line hero-line-second"><span>negócio ser <em>escolhido.</em></span></span>
           </h1>
           <p className="hero-intro hero-enter hero-enter-one">
-            Sou Wellington Junior, desenvolvedor front-end no Rio de Janeiro. Planejo e construo
-            sites e interfaces para empresas e profissionais, unindo comunicação clara,
-            design e desenvolvimento responsivo.
+            Sou Wellington Junior, desenvolvedor web no Rio de Janeiro. Crio sites e aplicações
+            para empresas e profissionais, da interface ao back-end e à integração com banco de dados.
           </p>
           <div className="hero-actions hero-enter hero-enter-two">
             <a
@@ -135,7 +115,7 @@ export default function Home() {
       </section>
 
       <section className="proof-strip" aria-label="Destaques profissionais">
-        <div><strong>02</strong><span>Projetos reais<br />online</span></div>
+        <div><strong>{String(caseStudies.length).padStart(2, "0")}</strong><span>{caseStudies.length === 1 ? "Projeto real" : "Projetos reais"}<br />online</span></div>
         <div><strong>100%</strong><span>Responsivo<br />e sob medida</span></div>
         <div><strong>RJ</strong><span>Atendimento local<br />e remoto</span></div>
       </section>
@@ -149,15 +129,10 @@ export default function Home() {
           <p>Projetos criados para apresentar negócios, conectar pessoas e facilitar o contato.</p>
         </div>
 
-        {caseStudies.map((study) => <article className="case-study" key={study.name}>
-          {study.visual === "gallery" ? <ProjectGallery /> : (
-            <div className="case-visual case-visual-arte">
-              <img src="/arte-pra-viver.png" alt="Imagem de apresentação do Espaço Arte pra Viver, com a frase Ideias que ganham vida quando se encontram" loading="lazy" />
-              <span className="case-label">Front-end · Back-end · Supabase</span>
-            </div>
-          )}
+        {caseStudies.map((study, index) => <article className="case-study" key={study.name}>
+          <ProjectGallery title={study.name} domain={study.domain} caption={study.caption} screens={study.screens} contain={study.contain} />
           <div className="case-copy">
-            <p className="case-number">{study.number}</p>
+            <p className="case-number">CASE {String(index + 1).padStart(2, "0")}</p>
             <h3>{study.name}</h3>
             <p className="case-lead">{study.lead}</p>
             <div className="case-detail">
@@ -234,7 +209,7 @@ export default function Home() {
             <img className="about-photo" src="/wellington-junior.jpg" alt="Wellington Junior" />
             <h2>Desenvolvimento com visão de <em>negócio.</em></h2>
           </div>
-          <p>Sou Wellington Junior, desenvolvedor front-end no Rio de Janeiro. Crio landing pages, sites institucionais e interfaces web usando React, Next.js, TypeScript e JavaScript. No projeto Mania de Doce e Cia, cuidei da interface até a publicação do site.</p>
+          <p>Sou Wellington Junior, desenvolvedor web no Rio de Janeiro. Crio sites e aplicações que ajudam negócios a se apresentar e se conectar com pessoas. Na Mania de Doce e Cia, cuidei da interface até a publicação; no Arte pra Viver, desenvolvi o front-end, o back-end e a integração com Supabase.</p>
           <div className="social-links">
             <a href="https://github.com/Wellington-Junior" target="_blank" rel="noreferrer">GitHub <ArrowIcon /></a>
             <a href="https://www.linkedin.com/in/wellington-junior-85ba93221/" target="_blank" rel="noreferrer">LinkedIn <ArrowIcon /></a>
@@ -257,15 +232,19 @@ export default function Home() {
         <div className="faq-list">
           <details>
             <summary>Que tipo de projeto você desenvolve?</summary>
-            <p>Landing pages, sites institucionais e interfaces front-end para negócios e profissionais.</p>
+            <p>Landing pages, sites institucionais e aplicações web para negócios e profissionais.</p>
           </details>
           <details>
             <summary>Como começa um projeto?</summary>
             <p>Conversamos sobre o negócio, o que você precisa e o objetivo do projeto. Em seguida, alinhamos o escopo e os próximos passos para uma proposta.</p>
           </details>
           <details>
-            <summary>Quais tecnologias você utiliza?</summary>
-            <p>Entre as tecnologias com que trabalho estão React, Next.js, TypeScript, JavaScript, HTML, CSS e Tailwind CSS.</p>
+            <summary>O que preciso enviar para começar?</summary>
+            <p>Conte sobre seu negócio, o objetivo do projeto e o que você já tem em mente. Na conversa, alinhamos quais conteúdos e informações serão necessários.</p>
+          </details>
+          <details>
+            <summary>O site vai funcionar no celular?</summary>
+            <p>Os projetos são desenvolvidos com atenção à adaptação para diferentes tamanhos de tela, incluindo celulares.</p>
           </details>
         </div>
       </section>

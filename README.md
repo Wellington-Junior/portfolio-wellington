@@ -35,3 +35,16 @@ Bacharelado em Engenharia de Software em andamento.
 
 - [LinkedIn](https://www.linkedin.com/in/wellington-junior-85ba93221/)
 - Rio de Janeiro, Brasil
+
+
+## Adicionar um projeto ao portfólio
+
+Os cases do site ficam em `app/caseStudies.ts`. Para acrescentar um trabalho real:
+
+1. Salve as imagens das telas em `public/`, sem dados pessoais de clientes.
+2. Acrescente um item à lista `caseStudies`, seguindo o modelo da Mania de Doce.
+3. Preencha nome, endereço do site, resumo, desafio, solução, tecnologias e legenda.
+4. Em `screens`, informe cada tela com um rótulo, caminho da imagem e descrição alternativa. É necessária ao menos uma imagem; adicione mais telas quando disponíveis.
+5. Use `contain: true` quando for importante mostrar a imagem inteira; use `false` para preencher a moldura.
+
+A galeria, a numeração dos cases e o total de projetos são atualizados automaticamente. Confira o conteúdo e os links antes de publicar.

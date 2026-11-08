@@ -22,9 +22,9 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     metadataBase: new URL(origin),
     alternates: { canonical: "https://www.wellingtonjunior.dev/" },
-    title: "Wellington Junior | Desenvolvedor Front-end",
-    description: "Sites profissionais, landing pages e interfaces responsivas para pequenos negócios. Desenvolvimento front-end no Rio de Janeiro e atendimento remoto.",
-    keywords: ["desenvolvedor front-end", "criação de sites", "landing page", "React", "Rio de Janeiro"],
+    title: "Wellington Junior | Sites e aplicações web",
+    description: "Criação de sites, landing pages e aplicações web para negócios. Desenvolvimento no Rio de Janeiro com atendimento remoto.",
+    keywords: ["desenvolvedor web", "criação de sites", "aplicações web", "landing page", "Rio de Janeiro"],
     authors: [{ name: "Wellington Junior" }],
     openGraph: {
       title: "Wellington Junior | Sites que fazem negócios serem escolhidos",
@@ -32,11 +32,11 @@ export async function generateMetadata(): Promise<Metadata> {
       type: "website",
       locale: "pt_BR",
       url: origin,
-      images: [{ url: `${origin}/og.png`, width: 1200, height: 630, alt: "Portfólio de Wellington Junior, Desenvolvedor Front-end" }],
+      images: [{ url: `${origin}/og.png`, width: 1200, height: 630, alt: "Portfólio de Wellington Junior, desenvolvedor web" }],
     },
     twitter: {
       card: "summary_large_image",
-      title: "Wellington Junior | Desenvolvedor Front-end",
+      title: "Wellington Junior | Sites e aplicações web",
       description: "Sites profissionais para transformar presença digital em oportunidades.",
       images: [`${origin}/og.png`],
     },
