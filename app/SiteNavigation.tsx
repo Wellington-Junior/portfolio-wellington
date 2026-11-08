@@ -1,5 +1,7 @@
 "use client";
 
+import { ArrowIcon } from "./ArrowIcon";
+
 import { useEffect, useState } from "react";
 
 const navigation = [
@@ -176,11 +178,11 @@ export function SiteNavigation() {
 
         <a
           className="header-cta"
-          href="https://w.app/wellingtonjunior"
+          href="https://wa.me/5521990935410"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Vamos conversar <span aria-hidden="true">↗</span>
+          Vamos conversar <ArrowIcon />
         </a>
       </header>
     </>

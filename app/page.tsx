@@ -1,3 +1,4 @@
+import { ArrowIcon } from "./ArrowIcon";
 import { ProjectGallery } from "./ProjectGallery";
 import { BuildShowcase } from "./BuildShowcase";
 import { SiteNavigation } from "./SiteNavigation";
@@ -53,7 +54,6 @@ const caseStudies = [
   },
 ];
 
-const Arrow = () => <span aria-hidden="true">↗</span>;
 
 export default function Home() {
   const schema = {
@@ -101,13 +101,13 @@ export default function Home() {
           <div className="hero-actions hero-enter hero-enter-two">
             <a
               className="button button-primary"
-              href="https://w.app/wellingtonjunior"
+              href="https://wa.me/5521990935410"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Orçar pelo WhatsApp <Arrow />
+              Orçar pelo WhatsApp <ArrowIcon />
             </a>
-            <a className="text-link" href="#projeto">Conhecer meu trabalho <span aria-hidden="true">↓</span></a>
+            <a className="text-link" href="#projeto">Conhecer meu trabalho <ArrowIcon direction="down" /></a>
           </div>
         </div>
 
@@ -118,7 +118,7 @@ export default function Home() {
           </div>
           <div className="project-float">
             <span>Projeto em produção</span>
-            <strong>Mania de Doce e Cia <Arrow /></strong>
+            <strong>Mania de Doce e Cia <ArrowIcon /></strong>
           </div>
         </a>
       </section>
@@ -154,7 +154,7 @@ export default function Home() {
             </div>
             <div className="tag-list">{study.technologies.map((tech) => <span key={tech}>{tech}</span>)}</div>
             <a className="button button-dark" href={study.href} target="_blank" rel="noreferrer">
-              Visitar o site <Arrow />
+              Visitar o site <ArrowIcon />
             </a>
           </div>
         </article>)}
@@ -177,7 +177,7 @@ export default function Home() {
               <h3>{service.title}</h3>
               <p><strong>Para quem:</strong> {service.text}</p>
               <p><strong>O que pode incluir:</strong> {service.includes}</p>
-              <div className="service-arrow" aria-hidden="true">↗</div>
+              <div className="service-arrow" aria-hidden="true"><ArrowIcon /></div>
             </article>
           ))}
         </div>
@@ -186,7 +186,7 @@ export default function Home() {
             <h3>Como começamos?</h3>
             <p>Me conte pelo WhatsApp sobre seu negócio, o que você precisa e o objetivo do projeto. A partir dessa conversa, alinhamos o escopo e os próximos passos para uma proposta.</p>
           </div>
-          <a className="text-link" href="https://w.app/wellingtonjunior" target="_blank" rel="noopener noreferrer">Conversar sobre meu projeto <Arrow /></a>
+          <a className="text-link" href="https://wa.me/5521990935410" target="_blank" rel="noopener noreferrer">Conversar sobre meu projeto <ArrowIcon /></a>
         </div>
       </section>
 
@@ -220,9 +220,9 @@ export default function Home() {
           </div>
           <p>Sou Wellington Junior, desenvolvedor front-end no Rio de Janeiro. Crio landing pages, sites institucionais e interfaces web usando React, Next.js, TypeScript e JavaScript. No projeto Mania de Doce e Cia, cuidei da interface até a publicação do site.</p>
           <div className="social-links">
-            <a href="https://github.com/Wellington-Junior" target="_blank" rel="noreferrer">GitHub <Arrow /></a>
-            <a href="https://www.linkedin.com/in/wellington-junior-85ba93221/" target="_blank" rel="noreferrer">LinkedIn <Arrow /></a>
-            <a href="https://www.instagram.com/wj.dev/" target="_blank" rel="noreferrer">Instagram <Arrow /></a>
+            <a href="https://github.com/Wellington-Junior" target="_blank" rel="noreferrer">GitHub <ArrowIcon /></a>
+            <a href="https://www.linkedin.com/in/wellington-junior-85ba93221/" target="_blank" rel="noreferrer">LinkedIn <ArrowIcon /></a>
+            <a href="https://www.instagram.com/wj.dev/" target="_blank" rel="noreferrer">Instagram <ArrowIcon /></a>
           </div>
         </div>
         <div className="tech-panel">
@@ -258,16 +258,13 @@ export default function Home() {
         <p className="kicker">Tem um projeto em mente?</p>
         <h2>Vamos colocar sua ideia <em>no ar.</em></h2>
         <p>Conte um pouco sobre seu negócio. Eu respondo com os próximos passos.</p>
-        <a className="button button-primary contact-whatsapp" href="https://w.app/wellingtonjunior" target="_blank" rel="noopener noreferrer">Conversar pelo WhatsApp <Arrow /></a>
-        <a className="contact-email" href="mailto:wellingtonjunior.dev@gmail.com?subject=Quero%20criar%20um%20site">
-          wellingtonjunior.dev@gmail.com <Arrow />
-        </a>
+        <a className="button button-primary contact-whatsapp" href="https://wa.me/5521990935410" target="_blank" rel="noopener noreferrer">Conversar pelo WhatsApp <ArrowIcon /></a>
       </section>
 
       <footer className="site-footer">
         <a className="brand" href="#inicio">WJ<span>.</span>dev</a>
         <p>© 2026 Wellington Junior. Desenvolvido com atenção aos detalhes.</p>
-        <a href="#inicio">Voltar ao topo ↑</a>
+        <a href="#inicio">Voltar ao topo <ArrowIcon direction="up" /></a>
       </footer>
     </main>
   );

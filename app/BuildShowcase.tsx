@@ -1,5 +1,7 @@
 "use client";
 
+import { ArrowIcon } from "./ArrowIcon";
+
 import { useEffect, useRef, useState } from "react";
 
 export function BuildShowcase() {
@@ -81,7 +83,7 @@ export function BuildShowcase() {
                 <small>SUA PRESENÇA DIGITAL</small>
                 <h3>Uma ideia.<br /><em>Bem apresentada.</em></h3>
                 <p>Estratégia, design e tecnologia em uma experiência clara.</p>
-                <span>Conhecer o projeto ↗</span>
+                <span>Conhecer o projeto <ArrowIcon /></span>
               </div>
               <div className="preview-cards"><i /><i /><i /></div>
             </div>
