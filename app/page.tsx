@@ -1,5 +1,5 @@
-import { BuildShowcase } from "./BuildShowcase";
 import { ProjectGallery } from "./ProjectGallery";
+import { BuildShowcase } from "./BuildShowcase";
 import { SiteNavigation } from "./SiteNavigation";
 
 const services = [
@@ -39,6 +39,18 @@ const technologies = [
   "CSS3",
   "Tailwind CSS",
   "Git & GitHub",
+];
+
+const caseStudies = [
+  {
+    number: "CASE 01",
+    name: "Mania de Doce e Cia",
+    lead: "Uma presença digital doce na aparência e direta na experiência.",
+    challenge: "Organizar um catálogo variado sem perder a identidade artesanal da marca.",
+    solution: "Arquitetura clara, visual responsivo e caminhos rápidos para conhecer os produtos e pedir informações.",
+    technologies: ["React", "JavaScript", "CSS", "Responsivo"],
+    href: "https://maniadedoceecia.com.br/",
+  },
 ];
 
 const Arrow = () => <span aria-hidden="true">↗</span>;
@@ -82,8 +94,9 @@ export default function Home() {
             <span className="hero-line hero-line-second"><span>negócio ser <em>escolhido.</em></span></span>
           </h1>
           <p className="hero-intro hero-enter hero-enter-one">
-            Sou Wellington Junior, desenvolvedor front-end no Rio de Janeiro. Crio sites
-            rápidos e profissionais para transformar presença digital em novas oportunidades.
+            Sou Wellington Junior, desenvolvedor front-end no Rio de Janeiro. Planejo e construo
+            sites e interfaces para empresas e profissionais, unindo comunicação clara,
+            design e desenvolvimento responsivo.
           </p>
           <div className="hero-actions hero-enter hero-enter-two">
             <a
@@ -116,8 +129,6 @@ export default function Home() {
         <div><strong>RJ</strong><span>Atendimento local<br />e remoto</span></div>
       </section>
 
-      <BuildShowcase />
-
       <section className="project-section section-shell" id="projeto">
         <div className="section-heading">
           <div>
@@ -127,27 +138,29 @@ export default function Home() {
           <p>Um site pensado do conteúdo à publicação para apresentar produtos, ocasiões e facilitar o contato com clientes.</p>
         </div>
 
-        <div className="case-study">
+        {caseStudies.map((study) => <article className="case-study" key={study.name}>
           <ProjectGallery />
           <div className="case-copy">
-            <p className="case-number">CASE 01</p>
-            <h3>Mania de Doce e Cia</h3>
-            <p className="case-lead">Uma presença digital doce na aparência e direta na experiência.</p>
+            <p className="case-number">{study.number}</p>
+            <h3>{study.name}</h3>
+            <p className="case-lead">{study.lead}</p>
             <div className="case-detail">
               <span>Desafio</span>
-              <p>Organizar um catálogo variado sem perder a identidade artesanal da marca.</p>
+              <p>{study.challenge}</p>
             </div>
             <div className="case-detail">
               <span>Solução</span>
-              <p>Arquitetura clara, visual responsivo e caminhos rápidos para conhecer os produtos e pedir informações.</p>
+              <p>{study.solution}</p>
             </div>
-            <div className="tag-list"><span>React</span><span>JavaScript</span><span>CSS</span><span>Responsivo</span></div>
-            <a className="button button-dark" href="https://maniadedoceecia.com.br/" target="_blank" rel="noreferrer">
+            <div className="tag-list">{study.technologies.map((tech) => <span key={tech}>{tech}</span>)}</div>
+            <a className="button button-dark" href={study.href} target="_blank" rel="noreferrer">
               Visitar o site <Arrow />
             </a>
           </div>
-        </div>
+        </article>)}
       </section>
+
+      <BuildShowcase />
 
       <section className="services-section section-shell" id="servicos">
         <div className="section-heading compact">
@@ -201,14 +214,11 @@ export default function Home() {
       <section className="about-section section-shell" id="sobre">
         <div className="about-main">
           <p className="kicker light">Sobre mim</p>
-          <h2>Desenvolvimento com visão de <em>negócio.</em></h2>
-          <p>
-            Sou Wellington Junior, desenvolvedor Front-End focado na criação de sites, landing pages e aplicações web modernas, responsivas e funcionais.
-            <br/><br/>
-            Trabalho com tecnologias como React, Next.js, TypeScript e JavaScript, buscando unir boa experiência do usuário, desempenho e soluções que realmente atendam às necessidades de cada projeto.
-            <br/><br/>
-            Tenho experiência prática no desenvolvimento de projetos reais, desde a criação da interface até publicação e configuração em produção.
-          </p>
+          <div className="about-identity">
+            <img className="about-photo" src="/wellington-junior.jpg" alt="Wellington Junior" />
+            <h2>Desenvolvimento com visão de <em>negócio.</em></h2>
+          </div>
+          <p>Sou Wellington Junior, desenvolvedor front-end no Rio de Janeiro. Crio landing pages, sites institucionais e interfaces web usando React, Next.js, TypeScript e JavaScript. No projeto Mania de Doce e Cia, cuidei da interface até a publicação do site.</p>
           <div className="social-links">
             <a href="https://github.com/Wellington-Junior" target="_blank" rel="noreferrer">GitHub <Arrow /></a>
             <a href="https://www.linkedin.com/in/wellington-junior-85ba93221/" target="_blank" rel="noreferrer">LinkedIn <Arrow /></a>
@@ -223,10 +233,32 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="faq-section section-shell" aria-labelledby="faq-title">
+        <div>
+          <p className="kicker">Dúvidas comuns</p>
+          <h2 id="faq-title">Antes de <em>começar.</em></h2>
+        </div>
+        <div className="faq-list">
+          <details>
+            <summary>Que tipo de projeto você desenvolve?</summary>
+            <p>Landing pages, sites institucionais e interfaces front-end para negócios e profissionais.</p>
+          </details>
+          <details>
+            <summary>Como começa um projeto?</summary>
+            <p>Conversamos sobre o negócio, o que você precisa e o objetivo do projeto. Em seguida, alinhamos o escopo e os próximos passos para uma proposta.</p>
+          </details>
+          <details>
+            <summary>Quais tecnologias você utiliza?</summary>
+            <p>Entre as tecnologias com que trabalho estão React, Next.js, TypeScript, JavaScript, HTML, CSS e Tailwind CSS.</p>
+          </details>
+        </div>
+      </section>
+
       <section className="contact-section section-shell" id="contato">
         <p className="kicker">Tem um projeto em mente?</p>
         <h2>Vamos colocar sua ideia <em>no ar.</em></h2>
         <p>Conte um pouco sobre seu negócio. Eu respondo com os próximos passos.</p>
+        <a className="button button-primary contact-whatsapp" href="https://w.app/wellingtonjunior" target="_blank" rel="noopener noreferrer">Conversar pelo WhatsApp <Arrow /></a>
         <a className="contact-email" href="mailto:wellingtonjunior.dev@gmail.com?subject=Quero%20criar%20um%20site">
           wellingtonjunior.dev@gmail.com <Arrow />
         </a>
