@@ -10,6 +10,7 @@ const navigation = [
 
 export function SiteNavigation() {
   const [activeSection, setActiveSection] = useState("inicio");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleNavigation = (
     event: React.MouseEvent<HTMLAnchorElement>,
@@ -27,6 +28,7 @@ export function SiteNavigation() {
     });
 
     window.history.replaceState(null, "", `#${id}`);
+    setIsMenuOpen(false);
   };
 
   useEffect(() => {
@@ -97,6 +99,12 @@ export function SiteNavigation() {
       { threshold: 0.45 }
     );
 
+    const closeMenuOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setIsMenuOpen(false);
+    };
+
+    window.addEventListener("keydown", closeMenuOnEscape);
+
     sections.forEach((section) => sectionObserver.observe(section));
 
     document
@@ -112,6 +120,7 @@ export function SiteNavigation() {
       sectionObserver.disconnect();
       stepObserver.disconnect();
 
+      window.removeEventListener("keydown", closeMenuOnEscape);
       window.cancelAnimationFrame(scrollFrame);
       window.cancelAnimationFrame(pointerFrame);
 
@@ -136,7 +145,22 @@ export function SiteNavigation() {
           WJ<span>.</span>dev
         </a>
 
-        <nav aria-label="Navegação principal">
+        <button
+          className="mobile-menu-toggle"
+          type="button"
+          aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
+          aria-controls="site-navigation"
+          aria-expanded={isMenuOpen}
+          onClick={() => setIsMenuOpen((open) => !open)}
+        >
+          {isMenuOpen ? "Fechar" : "Menu"}
+        </button>
+
+        <nav
+          id="site-navigation"
+          className={isMenuOpen ? "is-open" : ""}
+          aria-label="Navegação principal"
+        >
           {navigation.map(([id, label]) => (
             <a
               key={id}

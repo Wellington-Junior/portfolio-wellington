@@ -21,6 +21,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     metadataBase: new URL(origin),
+    alternates: { canonical: "https://www.wellingtonjunior.dev/" },
     title: "Wellington Junior | Desenvolvedor Front-end",
     description: "Sites profissionais, landing pages e interfaces responsivas para pequenos negócios. Desenvolvimento front-end no Rio de Janeiro e atendimento remoto.",
     keywords: ["desenvolvedor front-end", "criação de sites", "landing page", "React", "Rio de Janeiro"],

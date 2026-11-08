@@ -45,6 +45,7 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Wellington Junior",
+    url: "https://www.wellingtonjunior.dev/",
     jobTitle: "Desenvolvedor Front-end",
     sameAs: [
       "https://github.com/Wellington-Junior",
@@ -82,8 +83,13 @@ export default function Home() {
             rápidos e profissionais para transformar presença digital em novas oportunidades.
           </p>
           <div className="hero-actions hero-enter hero-enter-two">
-            <a className="button button-primary" href="mailto:wellingtonjunior.dev@gmail.com?subject=Orçamento%20para%20criação%20de%20site">
-              Solicitar um orçamento <Arrow />
+            <a
+              className="button button-primary"
+              href="https://w.app/wellingtonjunior"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Orçar pelo WhatsApp <Arrow />
             </a>
             <a className="text-link" href="#projeto">Conhecer meu trabalho <span aria-hidden="true">↓</span></a>
           </div>
