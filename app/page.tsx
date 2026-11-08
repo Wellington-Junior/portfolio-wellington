@@ -6,17 +6,20 @@ const services = [
   {
     number: "01",
     title: "Landing pages",
-    text: "Páginas objetivas para apresentar uma oferta e transformar visitas em contatos.",
+    text: "Para negócios e profissionais que querem divulgar uma oferta, campanha ou lançamento e receber contatos.",
+    includes: "Pode incluir apresentação da oferta, benefícios, chamadas para ação e contato pelo WhatsApp.",
   },
   {
     number: "02",
     title: "Sites institucionais",
-    text: "Presença digital profissional para negócios que precisam transmitir confiança.",
+    text: "Para empresas e profissionais que precisam apresentar seus serviços e transmitir confiança online.",
+    includes: "Pode incluir informações sobre o negócio, serviços, portfólio e canais de contato.",
   },
   {
     number: "03",
     title: "Interfaces front-end",
-    text: "Experiências rápidas, responsivas e fáceis de usar em qualquer tela.",
+    text: "Para projetos que precisam transformar uma ideia ou um layout em uma interface para a web.",
+    includes: "Pode incluir desenvolvimento com React, adaptação para celular e atenção à navegação e à acessibilidade.",
   },
 ];
 
@@ -159,10 +162,18 @@ export default function Home() {
             <article className="service-card" key={service.number}>
               <span>{service.number}</span>
               <h3>{service.title}</h3>
-              <p>{service.text}</p>
+              <p><strong>Para quem:</strong> {service.text}</p>
+              <p><strong>O que pode incluir:</strong> {service.includes}</p>
               <div className="service-arrow" aria-hidden="true">↗</div>
             </article>
           ))}
+        </div>
+        <div className="services-contact">
+          <div>
+            <h3>Como começamos?</h3>
+            <p>Me conte pelo WhatsApp sobre seu negócio, o que você precisa e o objetivo do projeto. A partir dessa conversa, alinhamos o escopo e os próximos passos para uma proposta.</p>
+          </div>
+          <a className="text-link" href="https://w.app/wellingtonjunior" target="_blank" rel="noopener noreferrer">Conversar sobre meu projeto <Arrow /></a>
         </div>
       </section>
 

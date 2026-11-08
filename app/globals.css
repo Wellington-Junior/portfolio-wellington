@@ -186,13 +186,20 @@ h1 em, h2 em { color: var(--accent); font-family: Georgia, serif; font-weight: 4
 .services-section { border-top: 1px solid var(--line); }
 .section-heading.compact { margin-bottom: 60px; }
 .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
-.service-card { min-height: 390px; padding: 34px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); position: relative; transition: background .25s ease, color .25s ease; }
+.service-card { min-height: 390px; padding: 34px 34px 90px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); position: relative; transition: background .25s ease, color .25s ease; }
 .service-card > span { font-family: var(--font-geist-mono); font-size: 11px; color: var(--muted); }
 .service-card h3 { font-size: clamp(27px, 3vw, 42px); letter-spacing: -.05em; margin: 100px 0 18px; }
 .service-card p { color: var(--muted); line-height: 1.65; max-width: 320px; }
+.service-card p + p { margin-top: 18px; }
+.service-card p strong { color: var(--ink); font-weight: 650; }
+.services-contact { display: flex; align-items: center; justify-content: space-between; gap: 32px; padding-top: 38px; }
+.services-contact h3 { font-size: 24px; letter-spacing: -.04em; margin: 0 0 12px; }
+.services-contact p { color: var(--muted); line-height: 1.65; max-width: 690px; margin: 0; }
+.services-contact .text-link { flex-shrink: 0; }
 .service-arrow { position: absolute; right: 28px; bottom: 25px; border: 1px solid var(--line); width: 44px; height: 44px; display: grid; place-items: center; }
 .service-card:hover { background: var(--accent); color: white; }
-.service-card:hover p, .service-card:hover > span { color: rgba(255,255,255,.75); }
+.service-card:hover p, .service-card:hover > span { color: rgba(255,255,255,.85); }
+.service-card:hover p strong { color: white; }
 
 .process-section { background: var(--white); display: grid; grid-template-columns: .75fr 1.25fr; gap: 9vw; }
 .process-intro > p:last-child { color: var(--muted); line-height: 1.7; max-width: 420px; margin-top: 30px; }
@@ -235,6 +242,7 @@ h1 em, h2 em { color: var(--accent); font-family: Georgia, serif; font-weight: 4
   .case-study, .process-section, .about-section { grid-template-columns: 1fr; }
   .case-visual { min-height: auto; }
   .services-grid { grid-template-columns: 1fr; }
+  .services-contact { align-items: flex-start; flex-direction: column; }
   .service-card { min-height: 290px; }
   .service-card h3 { margin-top: 60px; }
   .process-section { gap: 70px; }
